@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Love Counter ❤️</title>
+
+  <style>
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    body {
+
+      min-height: 100vh;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      font-family: Georgia, serif;
+
+      color: #fff7ed;
+
+      background:
+
+        radial-gradient(
+
+          circle at top,
+
+          rgba(255,255,255,0.10),
+
+          transparent 35%
+
+        ),
+
+        linear-gradient(
+
+          135deg,
+
+          #4d0713,
+
+          #8f1d2c,
+
+          #5c0a19
+
+        );
+
+    }
+
+    .card {
+
+      width: min(900px, 100%);
+
+      padding: 50px 25px;
+
+      text-align: center;
+
+      background: rgba(65, 4, 16, 0.45);
+
+      border:
+
+        1px solid rgba(255,255,255,0.20);
+
+      border-radius: 28px;
+
+      box-shadow:
+
+        0 20px 60px rgba(0,0,0,0.35);
+
+    }
+
+    .small {
+
+      margin-bottom: 15px;
+
+      font-size: 13px;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+      color: #f1c6bc;
+
+    }
+
+    h1 {
+
+      margin-bottom: 10px;
+
+      font-size: clamp(42px, 8vw, 80px);
+
+      font-weight: normal;
+
+    }
+
+    .since {
+
+      margin-bottom: 35px;
+
+      font-size: 16px;
+
+      color: #e9c8a8;
+
+    }
+
+    .counter {
+
+      display: grid;
+
+      grid-template-columns:
+
+        repeat(6, 1fr);
+
+      gap: 12px;
+
+    }
+
+    .box {
+
+      padding: 22px 8px;
+
+      background:
+
+        rgba(255,255,255,0.09);
+
+      border:
+
+        1px solid rgba(255,255,255,0.13);
+
+      border-radius: 18px;
+
+    }
+
+    .number {
+
+      display: block;
+
+      font-size:
+
+        clamp(28px, 5vw, 50px);
+
+      font-weight: bold;
+
+      color: #fff3dc;
+
+    }
+
+    .label {
+
+      display: block;
+
+      margin-top: 7px;
+
+      font-size: 10px;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+      color: #e9b9b5;
+
+    }
+
+    .footer {
+
+      margin-top: 30px;
+
+      font-size: 18px;
+
+      color: #f8d7d1;
+
+    }
+
+    .heart {
+
+      display: inline-block;
+
+      animation:
+
+        heartbeat 1.5s infinite;
+
+    }
+
+    @keyframes heartbeat {
+
+      0% {
+
+        transform: scale(1);
+
+      }
+
+      20% {
+
+        transform: scale(1.15);
+
+      }
+
+      40% {
+
+        transform: scale(1);
+
+      }
+
+      60% {
+
+        transform: scale(1.15);
+
+      }
+
+      100% {
+
+        transform: scale(1);
+
+      }
+
+    }
+
+    @media (max-width: 720px) {
+
+      .counter {
+
+        grid-template-columns:
+
+          repeat(3, 1fr);
+
+      }
+
+      .card {
+
+        padding:
+
+          40px 15px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="small">
+
+      We've been together for
+
+    </div>
+
+    <h1>
+
+      Our Love
+
+      <span class="heart">❤️</span>
+
+    </h1>
+
+    <div class="since">
+
+      Since May 18, 2024
+
+    </div>
+
+    <div class="counter">
+
+      <div class="box">
+
+        <span
+
+          class="number"
+
+          id="years">
+
+          0
+
+        </span>
+
+        <span class="label">
+
+          Years
+
+        </span>
+
+      </div>
+
+      <div class="box">
+
+        <span
+
+          class="number"
+
+          id="months">
+
+          0
+
+        </span>
+
+        <span class="label">
+
+          Months
+
+        </span>
+
+      </div>
+
+      <div class="box">
+
+        <span
+
+          class="number"
+
+          id="days">
+
+          0
+
+        </span>
+
+        <span class="label">
+
+          Days
+
+        </span>
+
+      </div>
+
+      <div class="box">
+
+        <span
+
+          class="number"
+
+          id="hours">
+
+          00
+
+        </span>
+
+        <span class="label">
+
+          Hours
+
+        </span>
+
+      </div>
+
+      <div class="box">
+
+        <span
+
+          class="number"
+
+          id="minutes">
+
+          00
+
+        </span>
+
+        <span class="label">
+
+          Minutes
+
+        </span>
+
+      </div>
+
+      <div class="box">
+
+        <span
+
+          class="number"
+
+          id="seconds">
+
+          00
+          </span>
+
+        <span class="label">
+
+          Seconds
+
+        </span>
+
+      </div>
+
+    </div>
+
+    <div class="footer">
+
+      And still counting... ♡
+
+    </div>
+
+  </div>
+
+  <script>
+
+    // May = 4 because JavaScript starts
+
+    // counting months from 0.
+
+    const startDate =
+
+      new Date(
+
+        2024,
+
+        4,
+
+        18,
+
+        0,
+
+        0,
+
+        0
+
+      );
+
+    function updateCounter() {
+
+      const now =
+
+        new Date();
+
+      let years =
+
+        now.getFullYear()
+
+        -
+
+        startDate.getFullYear();
+
+      let months =
+
+        now.getMonth()
+
+        -
+
+        startDate.getMonth();
+
+      let days =
+
+        now.getDate()
+
+        -
+
+        startDate.getDate();
+
+      let hours =
+
+        now.getHours()
+
+        -
+
+        startDate.getHours();
+
+      let minutes =
+
+        now.getMinutes()
+
+        -
+
+        startDate.getMinutes();
+
+      let seconds =
+
+        now.getSeconds()
+
+        -
+
+        startDate.getSeconds();
+
+      if (seconds < 0) {
+
+        seconds += 60;
+
+        minutes--;
+
+      }
+
+      if (minutes < 0) {
+
+        minutes += 60;
+
+        hours--;
+
+      }
+
+      if (hours < 0) {
+
+        hours += 24;
+
+        days--;
+
+      }
+
+      if (days < 0) {
+
+        const previousMonthDays =
+
+          new Date(
+
+            now.getFullYear(),
+
+            now.getMonth(),
+
+            0
+
+          ).getDate();
+
+        days +=
+
+          previousMonthDays;
+
+        months--;
+
+      }
+
+      if (months < 0) {
+
+        months += 12;
+
+        years--;
+
+      }
+
+      document
+
+        .getElementById("years")
+
+        .textContent =
+
+        years;
+
+      document
+
+        .getElementById("months")
+
+        .textContent =
+
+        months;
+
+      document
+
+        .getElementById("days")
+
+        .textContent =
+
+        days;
+
+      document
+
+        .getElementById("hours")
+
+        .textContent =
+
+        String(hours)
+
+        .padStart(2, "0");
+
+      document
+
+        .getElementById("minutes")
+
+        .textContent =
+
+        String(minutes)
+
+        .padStart(2, "0");
+
+      document
+
+        .getElementById("seconds")
+
+        .textContent =
+
+        String(seconds)
+
+        .padStart(2, "0");
+
+    }
+
+    updateCounter();
+
+    setInterval(
+
+      updateCounter,
+
+      1000
+
+    );
+
+  </script>
+
+</body>
+
+</html>
